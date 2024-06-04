@@ -1,8 +1,8 @@
 export const genreateSignature = async (data, authHeader) => {
   const res = await fetch(
-    "https://upi-banking-backend-api.vercel.app/transaction/generateSignature",
+    // "https://upi-banking-backend-api.vercel.app/transaction/generateSignature",
     // "http://localhost:5000/transaction/generateSignature",
-    // "https://upi-banking-api.vercel.app/transaction/generateSignature",
+    "https://upi-banking-api.vercel.app/transaction/generateSignature",
     {
       method: "POST",
       headers: {
@@ -26,16 +26,16 @@ export const makeTransaction = async (data, authHeader) => {
   let url;
   if (data.acNo) {
     url =
-      "https://upi-banking-backend-api.vercel.app/transaction/makeTranscationUsingAccNo";
-    // "http://localhost:5000/transaction/makeTranscationUsingAccNo";
-    // "https://upi-banking-api.vercel.app/transaction/makeTranscationUsingAccNo";
+      // "https://upi-banking-backend-api.vercel.app/transaction/makeTranscationUsingAccNo";
+      // "http://localhost:5000/transaction/makeTranscationUsingAccNo";
+      "https://upi-banking-api.vercel.app/transaction/makeTranscationUsingAccNo";
   }
 
   if (data.phone) {
     url =
-      "https://upi-banking-backend-api.vercel.app/transaction/makeTranscationUsingPhoneNo";
-    // "http://localhost:5000/transaction/makeTranscationUsingPhoneNo";
-    // "https://upi-banking-api.vercel.app/transaction/makeTranscationUsingPhoneNo";
+      // "https://upi-banking-backend-api.vercel.app/transaction/makeTranscationUsingPhoneNo";
+      // "http://localhost:5000/transaction/makeTranscationUsingPhoneNo";
+      "https://upi-banking-api.vercel.app/transaction/makeTranscationUsingPhoneNo";
   }
 
   const res = await fetch(url, {
