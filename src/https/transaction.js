@@ -27,15 +27,15 @@ export const makeTransaction = async (data, authHeader) => {
   if (data.acNo) {
     url =
       "https://upi-banking-backend-api.vercel.app/transaction/makeTranscationUsingAccNo";
-      // "http://localhost:5000/transaction/makeTranscationUsingAccNo";
-      // "https://upi-banking-api.vercel.app/transaction/makeTranscationUsingAccNo";
+    // "http://localhost:5000/transaction/makeTranscationUsingAccNo";
+    // "https://upi-banking-api.vercel.app/transaction/makeTranscationUsingAccNo";
   }
 
   if (data.phone) {
     url =
       "https://upi-banking-backend-api.vercel.app/transaction/makeTranscationUsingPhoneNo";
-      // "http://localhost:5000/transaction/makeTranscationUsingPhoneNo";
-      // "https://upi-banking-api.vercel.app/transaction/makeTranscationUsingPhoneNo";
+    // "http://localhost:5000/transaction/makeTranscationUsingPhoneNo";
+    // "https://upi-banking-api.vercel.app/transaction/makeTranscationUsingPhoneNo";
   }
 
   const res = await fetch(url, {
@@ -60,16 +60,16 @@ export const getTransaction = async (userId, authHeader, type) => {
   let url;
   if (type === "sent") {
     url =
-      "https://upi-banking-backend-api.vercel.app/transaction/getHistorySent/";
+      // "https://upi-banking-backend-api.vercel.app/transaction/getHistorySent/";
       // "http://localhost:5000/transaction/getHistorySent/";
-      // "https://upi-banking-api.vercel.app/transaction/getHistorySent/";
+      "https://upi-banking-api.vercel.app/transaction/getHistorySent/";
   }
 
   if (type === "receive") {
     url =
-      "https://upi-banking-backend-api.vercel.app/transaction/getHistoryReceive/";
+      // "https://upi-banking-backend-api.vercel.app/transaction/getHistoryReceive/";
       // "http://localhost:5000/transaction/getHistoryReceive/";
-      // "https://upi-banking-api.vercel.app/transaction/getHistoryReceive/";
+      "https://upi-banking-api.vercel.app/transaction/getHistoryReceive/";
   }
 
   const res = await fetch(url + userId, {

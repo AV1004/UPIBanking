@@ -1,9 +1,9 @@
 // Function get publick and digital key pairs
 export const fetchKeyPairs = async () => {
   const res = await fetch(
-    "https://upi-banking-backend-api.vercel.app/users/keyGeneration"
+    // "https://upi-banking-backend-api.vercel.app/users/keyGeneration"
     // "http://localhost:5000/users/keyGeneration"
-    // "https://upi-banking-api.vercel.app/users/keyGeneration"
+    "https://upi-banking-api.vercel.app/users/keyGeneration"
   );
   const resData = await res.json();
 
@@ -16,9 +16,9 @@ export const fetchKeyPairs = async () => {
 
 export const startRegister = async (data) => {
   const res = await fetch(
-    "https://upi-banking-backend-api.vercel.app/users/register",
+    // "https://upi-banking-backend-api.vercel.app/users/register",
     // "http://localhost:5000/users/register",
-    // "https://upi-banking-api.vercel.app/users/register",
+    "https://upi-banking-api.vercel.app/users/register",
     {
       method: "PUT",
       headers: {
@@ -37,9 +37,9 @@ export const startRegister = async (data) => {
 
 export const verifySign = async (data) => {
   const res = await fetch(
-    "https://upi-banking-backend-api.vercel.app/users/verify",
+    // "https://upi-banking-backend-api.vercel.app/users/verify",
     // "http://localhost:5000/users/verify",
-    // "https://upi-banking-api.vercel.app/users/verify",
+    "https://upi-banking-api.vercel.app/users/verify",
     {
       method: "POST",
       headers: {
@@ -60,9 +60,9 @@ export const verifySign = async (data) => {
 
 export const verifyEmail = async (data) => {
   const res = await fetch(
-    "https://upi-banking-backend-api.vercel.app/users/verifyotp",
+    // "https://upi-banking-backend-api.vercel.app/users/verifyotp",
     // "http://localhost:5000/users/verifyotp",
-    // "https://upi-banking-api.vercel.app/users/verifyotp",
+    "https://upi-banking-api.vercel.app/users/verifyotp",
     {
       method: "POST",
       headers: {
@@ -82,9 +82,9 @@ export const verifyEmail = async (data) => {
 
 export const login = async (data) => {
   const res = await fetch(
-    "https://upi-banking-backend-api.vercel.app/users/login",
+    // "https://upi-banking-backend-api.vercel.app/users/login",
     // "http://localhost:5000/users/login",
-    // "https://upi-banking-api.vercel.app/users/login",
+    "https://upi-banking-api.vercel.app/users/login",
     {
       method: "POST",
       headers: {
@@ -114,9 +114,9 @@ export const completeProfile = async (data, authHeader) => {
   formData.append("image", data.image);
 
   const res = await fetch(
-    "https://upi-banking-backend-api.vercel.app/users/completeProfile",
+    // "https://upi-banking-backend-api.vercel.app/users/completeProfile",
     // "http://localhost:5000/users/completeProfile",
-    // "https://upi-banking-api.vercel.app/users/completeProfile",
+    "https://upi-banking-api.vercel.app/users/completeProfile",
     {
       method: "POST",
       headers: {
@@ -139,17 +139,17 @@ export const fetchUser = async (userId, authHeader, email) => {
   let url;
   if (userId === null) {
     url =
-      "https://upi-banking-backend-api.vercel.app/users/getProfileDetailsUsingEmail/" +
+      // "https://upi-banking-backend-api.vercel.app/users/getProfileDetailsUsingEmail/" +
       // "http://localhost:5000/users/getProfileDetailsUsingEmail/" + email;
-      // "https://upi-banking-api.vercel.app/users/getProfileDetailsUsingEmail/" +
+      "https://upi-banking-api.vercel.app/users/getProfileDetailsUsingEmail/" +
       email;
   }
   if (email === null) {
     url =
-      "https://upi-banking-backend-api.vercel.app/users/getProfileDetails/" +
-      userId;
-    // "http://localhost:5000/users/getProfileDetails/" + userId;
-    // "https://upi-banking-api.vercel.app/users/getProfileDetails/" + userId;
+      // "https://upi-banking-backend-api.vercel.app/users/getProfileDetails/" +
+      // userId;
+      // "http://localhost:5000/users/getProfileDetails/" + userId;
+      "https://upi-banking-api.vercel.app/users/getProfileDetails/" + userId;
   }
 
   const res = await fetch(url, {
